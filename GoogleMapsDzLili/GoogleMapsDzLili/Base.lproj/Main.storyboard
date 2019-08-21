@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZj-Sk-ssd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CITIES-->
+        <scene sceneID="yad-nJ-Daj">
+            <objects>
+                <viewController id="Lww-E7-txz" customClass="CitiesViewController" customModule="GoogleMapsDzLili" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q3O-sX-gHU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-5G-bEF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="mwL-jM-Urq" customClass="CitiesTableViewCell" customModule="GoogleMapsDzLili" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mwL-jM-Urq" id="cZ0-Ik-YBP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-lb-Pxo">
+                                                    <rect key="frame" x="20" y="5.5" width="374" height="189"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihn-pU-bTc">
+                                                    <rect key="frame" x="165.5" y="85" width="83.5" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="1wK-S7-Veu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ihn-pU-bTc" secondAttribute="trailing" id="Xsa-Eg-4n2"/>
+                                                <constraint firstItem="ihn-pU-bTc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cZ0-Ik-YBP" secondAttribute="leadingMargin" id="lkM-37-G8Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="ihn-pU-bTc" firstAttribute="centerX" secondItem="mwL-jM-Urq" secondAttribute="centerX" id="FKP-Tz-Uf0"/>
+                                            <constraint firstItem="tNF-lb-Pxo" firstAttribute="leading" secondItem="mwL-jM-Urq" secondAttribute="leading" constant="20" id="L8S-NP-mrX"/>
+                                            <constraint firstAttribute="bottom" secondItem="tNF-lb-Pxo" secondAttribute="bottom" constant="5.5" id="R34-Y0-w53"/>
+                                            <constraint firstItem="ihn-pU-bTc" firstAttribute="centerY" secondItem="mwL-jM-Urq" secondAttribute="centerY" id="WGq-vR-H0u"/>
+                                            <constraint firstItem="tNF-lb-Pxo" firstAttribute="top" secondItem="mwL-jM-Urq" secondAttribute="top" constant="5.5" id="ud4-sv-dNM"/>
+                                            <constraint firstAttribute="trailing" secondItem="tNF-lb-Pxo" secondAttribute="trailing" constant="20" id="udo-bB-lCu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="ihn-pU-bTc" id="6z4-nf-3u4"/>
+                                            <outlet property="thumbnailImageView" destination="tNF-lb-Pxo" id="vJc-Tl-GJt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lww-E7-txz" id="GDJ-5O-4AU"/>
+                                    <outlet property="delegate" destination="Lww-E7-txz" id="5Ch-j6-fOi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pH6-5G-bEF" firstAttribute="leading" secondItem="1HB-US-u7N" secondAttribute="leading" id="BG4-Ne-a4B"/>
+                            <constraint firstItem="pH6-5G-bEF" firstAttribute="trailing" secondItem="1HB-US-u7N" secondAttribute="trailing" id="EGO-KO-Yn2"/>
+                            <constraint firstItem="pH6-5G-bEF" firstAttribute="top" secondItem="1HB-US-u7N" secondAttribute="top" id="UF7-8c-DxT"/>
+                            <constraint firstItem="pH6-5G-bEF" firstAttribute="bottom" secondItem="1HB-US-u7N" secondAttribute="bottom" id="wyO-Mr-U7N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1HB-US-u7N"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CITIES" id="rMr-wj-Evn"/>
+                    <connections>
+                        <outlet property="tableView" destination="pH6-5G-bEF" id="meR-Kd-US4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTB-Uk-WKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="699.77678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapsDzLili" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE5-pg-ajW" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aE5-pg-ajW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ENV-k4-GLe"/>
+                            <constraint firstItem="aE5-pg-ajW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OfS-j2-fSA"/>
+                            <constraint firstItem="aE5-pg-ajW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bSV-sj-yAZ"/>
+                            <constraint firstItem="aE5-pg-ajW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="wqZ-f6-42S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="aE5-pg-ajW" id="Hcj-Db-CpW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="699.77678571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N27-nc-abb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="qZj-Sk-ssd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sWL-UQ-5kr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Deg-P5-6gZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Lww-E7-txz" kind="relationship" relationship="rootViewController" id="653-Md-uvv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpt-Lv-8Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239.13043478260872" y="699.77678571428567"/>
+        </scene>
+    </scenes>
+</document>
